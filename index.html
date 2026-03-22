@@ -174,7 +174,7 @@
             "linear-gradient(135deg, #10b981, #34d399, #059669)", /* Emerald */
             "linear-gradient(135deg, #f97316, #fb923c, #ea580c)"  /* Initial Orange */
         ];
-        let currentIndex = 0;
+        let currentIndex = -1; // -1 allows any of the 4 texts to appear on the first click
         let colorIndex = 0;
 
         const nextBtn = document.getElementById('next-btn');
@@ -190,8 +190,13 @@
 
             // Wait for text to peak in size, swap contents, then shrink back down
             setTimeout(() => {
+                let nextIndex;
+                do {
+                    nextIndex = Math.floor(Math.random() * sentences.length);
+                } while (nextIndex === currentIndex);
+                
+                currentIndex = nextIndex;
                 mainTitle.innerText = sentences[currentIndex];
-                currentIndex = (currentIndex + 1) % sentences.length;
                 mainTitle.classList.remove('pop');
             }, 200); // 200ms delay perfectly syncs with 0.2s transition
         });
