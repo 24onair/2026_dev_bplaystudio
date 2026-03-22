@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비플레이스튜디오 개발 시작</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        :root {
+            --bg-color-1: #0f172a;
+            --bg-color-2: #1e293b;
+            --bg-color-3: #020617;
+            --text-gradient-1: #38bdf8;
+            --text-gradient-2: #818cf8;
+            --text-gradient-3: #c084fc;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-color-3), var(--bg-color-1), var(--bg-color-2));
+            background-size: 400% 400%;
+            color: #ffffff;
+            overflow: hidden;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        .container {
+            text-align: center;
+            padding: 4rem 5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 32px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            animation: containerEntrance 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(40px) scale(0.9);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 6rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin: 0;
+            background: linear-gradient(
+                to right,
+                var(--text-gradient-1),
+                var(--text-gradient-2),
+                var(--text-gradient-3),
+                var(--text-gradient-2),
+                var(--text-gradient-1)
+            );
+            background-size: 200% auto;
+            color: #000;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShine 4s linear infinite reverse;
+        }
+
+        .subtitle {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: #94a3b8;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.2s forwards;
+        }
+
+        @keyframes containerEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes gradientShine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>비플레이스튜디오 개발 시작</h1>
+        <div class="subtitle">B-Play Studio Development Started</div>
+    </div>
+</body>
+</html>
