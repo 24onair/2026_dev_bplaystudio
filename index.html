@@ -331,41 +331,50 @@
             box-shadow: 0 4px 12px var(--btn-shadow);
             background: linear-gradient(135deg, var(--purple-700), var(--purple-900)) !important;
         }
+
         @media (max-width: 800px) {
             .app-header {
                 flex-direction: column;
                 padding: 1.5rem;
                 gap: 1.2rem;
             }
+
             .header-logo {
                 font-size: 1.3rem;
             }
+
             .header-nav {
                 flex-direction: column;
                 width: 100%;
                 gap: 1rem;
             }
+
             .header-nav a {
                 padding: 0.5rem 0;
                 display: block;
                 width: 100%;
                 text-align: center;
             }
+
             .container {
                 padding: 2.5rem 1.5rem;
                 width: 90%;
             }
+
             h1 {
                 font-size: 26pt;
                 line-height: 1.2;
             }
+
             h1.pop {
                 transform: scale(1.05) translateY(-3px);
             }
+
             .subtitle {
                 font-size: 1rem;
                 margin-top: 1.2rem;
             }
+
             .btn-next {
                 padding: 1.2rem 2rem;
                 font-size: 1.1rem;
@@ -373,19 +382,24 @@
                 max-width: 280px;
                 margin-top: 2rem;
             }
+
             .section-reviews {
                 padding: 4rem 1.5rem;
             }
+
             .section-title {
                 font-size: 1.8rem;
                 margin-bottom: 2.5rem;
             }
+
             .reviews-wrapper {
                 gap: 1.5rem;
             }
+
             .review-card {
                 padding: 2rem 1.5rem;
             }
+
             .review-text {
                 font-size: 1rem;
             }
@@ -418,7 +432,8 @@
                 <div class="review-card">
                     <img src="./assets/user_profile_1.png" alt="사용자 1" class="profile-img">
                     <div class="review-content">
-                        <p class="review-text">"이 서비스를 만난 후 제 인생의 모든 것이 달라졌습니다. 매일 아침 접속해서 문구를 클릭하는 것이 하루의 가장 큰 즐거움이에요!"</p>
+                        <p class="review-text">"이 서비스를 만난 후 제 인생의 모든 것이 달라졌습니다. 매일 아침 접속해서 문구를 클릭하는 것이 하루의 가장 큰 즐거움이에요!"
+                        </p>
                         <span class="review-author">김지윤 님</span>
                     </div>
                 </div>
@@ -471,7 +486,7 @@
                 do {
                     nextIndex = Math.floor(Math.random() * sentences.length);
                 } while (nextIndex === currentIndex);
-                
+
                 currentIndex = nextIndex;
                 mainTitle.innerText = sentences[currentIndex];
                 mainTitle.classList.remove('pop');
